@@ -18,6 +18,6 @@ let media_filter = (request, file, callback) =>{
         };
 
 
-let profileUpload = multer({ storage:storage, fileFilter: media_filter }).single('profimage');
+let profileUpload = multer({ storage:storage, fileFilter: media_filter }).single('uploadfile');
 
 module.exports  = {profileUpload} ;

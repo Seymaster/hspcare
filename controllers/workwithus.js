@@ -1,5 +1,6 @@
-const Workwithus = require("../models/Workwithus");
 const { cloudinaryConfig, uploader } = require("../config/cloud");
+const WorkwithusModel = require("../models/Workwithus")
+const fetch = require("node-fetch")
 
 
 function sendmail(){
@@ -60,7 +61,7 @@ function sendmail(){
 
 
 exports.getAllWorkwithus = (req,res,next) =>{
-    Workwithus.find()
+    WorkwithusModel.find()
     .then(data =>{
         if(data === null){
             res.status(200).send({
@@ -90,14 +91,15 @@ exports.postWorkwithus = (req,res,next)=>{
     const uploadfile = req.file.path
     uploader.upload(uploadfile).then((data) =>{
         let fileUrl = data.secure_url
-        Workwithus.save({
+        WorkwithusModel.create({
             fullName: fullName,
             gender: gender,
             coverLetter:coverLetter,
             uploadResume: fileUrl
         })
         .then((result)=>{
-            console.log(result);
+            // console.log(result);
+            sendmail()
             res.send({
                 status: 200,
                 message: "workwithus saved",
