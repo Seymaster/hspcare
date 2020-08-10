@@ -1,5 +1,7 @@
+db_username = process.env.dbUsername
+db_password = process.env.dbPassword
+
+
 module.exports = {
-    dbUrl: 'mongodb://127.0.0.1:27017/hspcare',
-    dbName: 'hspcare',
-    prodDb: process.env.prodDb
+    dbUrl: `mongodb+srv://${db_username}:<${db_password}>@cluster0.2ip3w.mongodb.net/<hspcare>?retryWrites=true&w=majority`,
 }
