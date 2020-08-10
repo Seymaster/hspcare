@@ -6,7 +6,7 @@ const schemas   = require("../middleware/schemas");
 
 
 // GET /referrals
-router.get("/referral",referralController.getAllReferral);
+router.get("/referrals",referralController.getAllReferral);
 
 // POST /referrals
 router.post("/referrals",referralController.postReferral);

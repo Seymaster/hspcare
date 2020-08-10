@@ -22,7 +22,7 @@ app.use("/api/v1", referralRouter);
 app.use("/api/v1",workwithusRouter);
 
 mongoose.connect(config.dbUrl,
-    {useUnifiedTopology: true, useNewUrlParser: true}
+    {useNewUrlParser: true,useUnifiedTopology: true}
 )
 .then(()=>{
     console.log("database connected")
