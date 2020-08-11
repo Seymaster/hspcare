@@ -9,6 +9,6 @@ const schemas   = require("../middleware/schemas");
 router.get("/referrals",referralController.getAllReferral);
 
 // POST /referrals
-router.post("/referrals",referralController.postReferral);
+router.post("/referrals", middleware.addTaskmiddleware(schemas.referralSchema, 'body'),referralController.postReferral);
 
 module.exports = router;

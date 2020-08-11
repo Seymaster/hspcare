@@ -13,7 +13,7 @@ router.get("/work-with-us", workwithusController.getAllWorkwithus);
 
 // POST /work-with-us
 router.use("*",cloudinaryConfig)
-router.post("/work-with-us",profileUpload, workwithusController.postWorkwithus);
+router.post("/work-with-us",profileUpload, middleware.addTaskmiddleware(schemas.workwithusSchema, 'body'), workwithusController.postWorkwithus);
 
 
 module.exports = router;
