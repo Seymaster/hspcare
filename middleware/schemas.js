@@ -22,7 +22,7 @@ const workwithusSchema = {
 
 const newsletterSchema = {
     newsletterPost: Joi.object().keys({
-        email: Joi.string().trim().email().required
+        email: Joi.string().email().required()
     })
 }
 

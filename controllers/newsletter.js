@@ -9,7 +9,7 @@ function sendmail(recipient){
         recipient
     ],
     "header": {
-        "title": "The Email Header",
+        "title": "You have subscribed to newsletter",
         "bgColor": "",
         "appName": "MyApp",
         "appURL": "http://myapp.com",

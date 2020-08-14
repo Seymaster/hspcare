@@ -9,6 +9,6 @@ const schemas   = require("../middleware/schemas");
 router.get("/newsletter",newsletterController.getAllNewsletter);
 
 // POST /saves email
-router.post("/newsletter", middleware.addTaskmiddleware(schemas.newsletterSchema, 'body'), newsletterController.postNewsletter);
+router.post("/newsletter", middleware.addTaskmiddleware(schemas.newsletterSchema.newsletterPost, 'body'), newsletterController.postNewsletter);
 
 module.exports = router;
