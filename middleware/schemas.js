@@ -15,9 +15,15 @@ const workwithusSchema = {
     workwithusPost: Joi.object().keys({
         fullName: Joi.string().required(),
         gender: Joi.string().trim().required(),
-        coverLetter: Joi.string().description().required(),
+        coverLetter: Joi.string().required(),
         uploadfile: Joi.string().required()
     })
 }
 
-module.exports = {referralSchema,workwithusSchema};
+const newsletterSchema = {
+    newsletterPost: Joi.object().keys({
+        email: Joi.string().trim().email().required
+    })
+}
+
+module.exports = {referralSchema,workwithusSchema,newsletterSchema};

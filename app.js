@@ -7,6 +7,7 @@ const mongoose  = require("mongoose");
 const config    = require("./config/mongocf");
 const referralRouter = require("./routes/referral");
 const workwithusRouter = require("./routes/workwithus");
+const newsletterRouter = require("./routes/newsletter");
 require("dotenv").config();
 
 mongoose.Promise = global.Promise;
@@ -20,6 +21,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use("/api/v1", referralRouter);
 app.use("/api/v1",workwithusRouter);
+app.use("/api/v1", newsletterRouter);
 
 mongoose.connect(config.dbUrl,
     {useNewUrlParser: true,useUnifiedTopology: true}
